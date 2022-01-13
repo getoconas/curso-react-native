@@ -9,7 +9,7 @@ export default function Footer(props) {
 
   return (
     <View style = { styles.viewFooter } >
-      <TouchableOpacity style = { styles.button } onPress = { calculate }>
+      <TouchableOpacity style = { styles.button } onPress = { calculate } >
         <Text style = { styles.text } >CALCULAR</Text>
       </TouchableOpacity>
     </View>
@@ -18,26 +18,26 @@ export default function Footer(props) {
 
 const styles = StyleSheet.create({
   viewFooter : {
-    position: 'absolute',
-    bottom: 0,
-    width: "100%",
+    alignItems: 'center',
     backgroundColor: colors.PRIMARY_COLOR,
-    height: 100,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    alignItems: 'center',
-    justifyContent: 'center'
+    bottom: 0,
+    height: 100,
+    justifyContent: 'center',
+    position: 'absolute',
+    width: "100%"
   },
   button : {
     backgroundColor: colors.PRIMARY_COLOR_DARK,
-    padding: 16,
     borderRadius: 20,
+    padding: 16,
     width: "75%"
-  }, 
+  },
   text : {
-    fontWeight: 'bold',
-    fontSize: 18,
     color: "#fff",
+    fontSize: 18,
+    fontWeight: 'bold',
     textAlign: 'center'
   }
 });

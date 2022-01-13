@@ -6,10 +6,10 @@ export default function ResultCalculation(props) {
   const { capital, interes, months, total, errorMessage } = props;
 
   return (
-    <View style = { styles.content }>
+    <View style = { styles.content } >
       { total && (
-        <View style = { styles.boxResult }>
-          <Text style = { styles.title }>Resumen del Prestamo</Text>
+        <View style = { styles.boxResult } >
+          <Text style = { styles.title } >Resumen del Prestamo</Text>
           <DataResult title = { "Cantidad Solicitada" } value = { `$ ${capital}` } />
           <DataResult title = { "Interes" } value = { `${interes} %` } />
           <DataResult title = { "Plazo" } value = { `${months} meses` } />
@@ -18,7 +18,7 @@ export default function ResultCalculation(props) {
         </View>
       )}
       <View>
-        <Text style = { styles.error }>{ errorMessage }</Text>
+        <Text style = { styles.error } >{ errorMessage }</Text>
       </View>
     </View>
   )
@@ -28,9 +28,9 @@ function DataResult(props) {
   const { title, value } = props;
 
   return(
-    <View style = { styles.value }>
+    <View style = { styles.value } >
       <Text>{ title }</Text>
-      <Text>{ value } </Text>
+      <Text>{ value }</Text>
     </View>
   );
 }
@@ -44,9 +44,9 @@ const styles = StyleSheet.create({
   }, 
   title : {
     fontSize: 25,
-    textAlign: 'center',
     fontWeight: 'bold',
-    marginBottom: 20
+    marginBottom: 20,
+    textAlign: 'center'    
   },
   value : {
     flexDirection: 'row',
@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
     marginBottom: 20
   }, 
   error : {
-    textAlign: 'center',
     color: "#f00",
+    fontSize: 20,
     fontWeight: 'bold',
-    fontSize: 20
+    textAlign: 'center'
   }
 });

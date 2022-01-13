@@ -10,35 +10,35 @@ export default function Form(props) {
   const { setCapital, setInteres, setMonths } = props;
 
   return(
-    <View style={ styles.viewForm }>
-      <View style={ styles.viewInputs }>
+    <View style = { styles.viewForm } >
+      <View style = { styles.viewInputs } >
         <TextInput 
-          placeholder='Cantidad a pedir'
-          keyboardType='numeric'
-          style={ styles.input }
+          placeholder = 'Cantidad a pedir'
+          keyboardType = 'numeric'
+          style = { styles.input }
           onChange = { e => setCapital(e.nativeEvent.text) }
         />
 
         <TextInput 
-          placeholder='Interes %' 
-          keyboardType='numeric' 
-          style={[ styles.input, styles.inputPorcentaje ]} 
+          placeholder = 'Interes %' 
+          keyboardType = 'numeric' 
+          style = {[ styles.input, styles.inputPorcentaje ]} 
           onChange = { e => setInteres(e.nativeEvent.text) }
         />
       </View>
 
       <RNPickerSelect
-        style={ pickerSelectStyles }
+        style = { pickerSelectStyles }
         onValueChange = {(value) => setMonths(value)}
         placeholder = {{
           label : 'Selecciona el plazo...',
           value : null
         }}
-        items={[
-          { label: '3 meses', value: 3 },
-          { label: '6 meses', value: 6 },
-          { label: '12 meses', value: 12 },
-          { label: '24 meses', value: 24 }
+        items = {[
+          { label : '3 meses', value: 3 },
+          { label : '6 meses', value: 6 },
+          { label : '12 meses', value: 12 },
+          { label : '24 meses', value: 24 }
         ]}
       />
 
@@ -47,62 +47,62 @@ export default function Form(props) {
 }
 
 const styles = StyleSheet.create({
-  viewForm: {
-    position: "absolute",
-    bottom: 0,
-    width: "85%",
-    paddingHorizontal: 50,
+  viewForm : {
     backgroundColor: colors.PRIMARY_COLOR_DARK,
     borderRadius: 30,
+    bottom: 0,
     height: 180,
-    justifyContent: "center"
+    justifyContent: "center",
+    paddingHorizontal: 50,
+    position: "absolute",    
+    width: "85%"
   },
   viewInputs : {
     flexDirection: "row"
   },
-  input: {
-    height: 50,
-    backgroundColor: "#fff",
-    borderWidth: 1,
+  input : {
+    backgroundColor: "#fff",    
     borderColor: colors.PRIMARY_COLOR,
     borderRadius: 5,
-    width: "60%",
-    marginRight: 5,
-    marginLeft: -5,
-    marginBottom: 10,
+    borderWidth: 1,
     color: "#000",
-    paddingHorizontal: 20
+    height: 50,
+    marginBottom: 10,
+    marginLeft: -5,
+    marginRight: 5,  
+    paddingHorizontal: 20,
+    width: "60%"
   },
-  inputPorcentaje: {
-    width: "40%",
-    marginLeft: 5
+  inputPorcentaje : {
+    marginLeft: 5,
+    width: "40%"    
   }
 });
 
 const pickerSelectStyles = StyleSheet.create({
-  inputIOS: {
-    fontSize: 16,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
-    borderWidth: 1,
+  inputIOS : {
+    backgroundColor: "#fff",
     borderColor: "grey",
     borderRadius: 4,
+    borderWidth: 1,
     color: "black",
-    paddingRight: 30,
-    backgroundColor: "#fff",
-    marginLeft: -5,
-    marginRight: -5
-  },
-  inputAndroid: {
     fontSize: 16,
+    marginLeft: -5,
+    marginRight: -5,
     paddingHorizontal: 10,
-    paddingVertical: 8,
-    borderWidth: 0.5,
+    paddingRight: 30,
+    paddingVertical: 12
+  },
+  inputAndroid : {
+    backgroundColor: "#fff",
     borderColor: "grey",
     borderRadius: 8,
+    borderWidth: 0.5,
     color: "black",
+    fontSize: 16,
+    paddingHorizontal: 10,
     paddingRight: 30,
-    backgroundColor: "#fff"
+    paddingVertical: 8
   }
 });
 
